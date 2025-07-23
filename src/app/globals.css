@@ -1,0 +1,210 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import 'tailwindcss';
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme {
+  --color-background: #ffffff;
+  --color-foreground: #1a1a1a;
+
+  --color-card: #ffffff;
+  --color-card-foreground: #1a1a1a;
+
+  --color-popover: #ffffff;
+  --color-popover-foreground: #1a1a1a;
+
+  --color-primary: #1a1a1a;
+  --color-primary-foreground: #ffffff;
+
+  --color-secondary: #f3f4f6; /* slightly off-white for secondary backgrounds */
+  --color-secondary-foreground: #1a1a1a;
+
+  --color-muted: #e5e7eb; /* a lighter gray for muted elements */
+  --color-muted-foreground: #6b7280;
+
+  --color-accent: #10b981;
+  --color-accent-foreground: #ffffff;
+
+  --color-destructive: #ef4444;
+  --color-destructive-foreground: #fafafa;
+
+  --color-border: #d1d5db; /* an implicit gray for borders */
+  --color-input: #ffffff;
+  --color-ring: #10b981;
+
+  --color-chart-1: #e67e22;
+  --color-chart-2: #2d8659;
+  --color-chart-3: #1e3a5f;
+  --color-chart-4: #f1c40f;
+  --color-chart-5: #e74c3c;
+
+  --color-sidebar: #f7f7f7;
+  --color-sidebar-foreground: #404040;
+  --color-sidebar-primary: #1a1a1a;
+  --color-sidebar-primary-foreground: #fafafa;
+  --color-sidebar-accent: #f0f0f0;
+  --color-sidebar-accent-foreground: #1a1a1a;
+  --color-sidebar-border: #d4d4d8;
+  --color-sidebar-ring: #3b82f6;
+
+  --radius-lg: 0.5rem;
+  --radius-md: calc(0.5rem - 2px);
+  --radius-sm: calc(0.5rem - 4px);
+
+  --animate-accordion-down: accordion-down 0.2s ease-out;
+  --animate-accordion-up: accordion-up 0.2s ease-out;
+
+  @keyframes accordion-down {
+    from {
+      height: 0;
+    }
+    to {
+      height: var(--radix-accordion-content-height);
+    }
+  }
+  @keyframes accordion-up {
+    from {
+      height: var(--radix-accordion-content-height);
+    }
+    to {
+      height: 0;
+    }
+  }
+
+  --font-sans: "Inter", sans-serif;
+  --font-body: "Inter", sans-serif;
+  --font-heading: "Inter", sans-serif;
+}
+
+/*
+  The default border color has changed to `currentColor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: #d1d5db; /* Matches --color-border */
+  }
+}
+
+@layer utilities {
+  body {
+    font-family: var(--font-body);
+  }
+}
+
+@layer base {
+  :root {
+    --background: var(--color-background);
+    --foreground: var(--color-foreground);
+    --card: var(--color-card);
+    --card-foreground: var(--color-card-foreground);
+    --popover: var(--color-popover);
+    --popover-foreground: var(--color-popover-foreground);
+    --primary: var(--color-primary);
+    --primary-foreground: var(--color-primary-foreground);
+    --secondary: var(--color-secondary);
+    --secondary-foreground: var(--color-secondary-foreground);
+    --muted: var(--color-muted);
+    --muted-foreground: var(--color-muted-foreground);
+    --accent: var(--color-accent);
+    --accent-foreground: var(--color-accent-foreground);
+    --destructive: var(--color-destructive);
+    --destructive-foreground: var(--color-destructive-foreground);
+    --border: var(--color-border);
+    --input: var(--color-input);
+    --ring: var(--color-ring);
+    --chart-1: var(--color-chart-1);
+    --chart-2: var(--color-chart-2);
+    --chart-3: var(--color-chart-3);
+    --chart-4: var(--color-chart-4);
+    --chart-5: var(--color-chart-5);
+    --radius: var(--radius-lg);
+    --sidebar-background: var(--color-sidebar);
+    --sidebar-foreground: var(--color-sidebar-foreground);
+    --sidebar-primary: var(--color-sidebar-primary);
+    --sidebar-primary-foreground: var(--color-sidebar-primary-foreground);
+    --sidebar-accent: var(--color-sidebar-accent);
+    --sidebar-accent-foreground: var(--color-sidebar-accent-foreground);
+    --sidebar-border: var(--color-sidebar-border);
+    --sidebar-ring: var(--color-sidebar-ring);
+  }
+
+  .dark {
+    --background: #0a0a0a;
+    --foreground: #fafafa;
+    --card: #0a0a0a;
+    --card-foreground: #fafafa;
+    --popover: #0a0a0a;
+    --popover-foreground: #fafafa;
+    --primary: #fafafa;
+    --primary-foreground: #171717;
+    --secondary: #262626;
+    --secondary-foreground: #fafafa;
+    --muted: #262626;
+    --muted-foreground: #a3a3a3;
+    --accent: #262626;
+    --accent-foreground: #fafafa;
+    --destructive: #7f1d1d;
+    --destructive-foreground: #fafafa;
+    --border: #262626;
+    --input: #262626;
+    --ring: #d4d4d8;
+    --chart-1: #3b82f6;
+    --chart-2: #10b981;
+    --chart-3: #f59e0b;
+    --chart-4: #8b5cf6;
+    --chart-5: #ef4444;
+    --sidebar-background: #1a1a1a;
+    --sidebar-foreground: #f0f0f0;
+    --sidebar-primary: #3b82f6;
+    --sidebar-primary-foreground: #ffffff;
+    --sidebar-accent: #292929;
+    --sidebar-accent-foreground: #f0f0f0;
+    --sidebar-border: #292929;
+    --sidebar-ring: #3b82f6;
+  }
+}
+
+@layer base {
+  * {
+    border-color: var(--border);
+  }
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-body);
+    line-height: 1.5;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    color: var(--primary);
+    line-height: 1.2;
+  }
+
+  p {
+    color: var(--foreground);
+  }
+
+  a {
+    color: var(--accent);
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+
+  strong {
+    font-weight: 600;
+  }
+}
