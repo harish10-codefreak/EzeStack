@@ -2,7 +2,7 @@
 
 import { cn } from "@/lib/utils";
 import React from "react";
-import { motion } from "motion/react";
+import { motion } from "framer-motion";
 import { Code, Globe, User, Building, Brain, Zap } from "lucide-react";
 
 export function ThreeColumnBentoGrid() {

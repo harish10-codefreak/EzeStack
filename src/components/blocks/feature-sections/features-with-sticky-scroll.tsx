@@ -5,7 +5,7 @@ import {
   useScroll,
   useTransform,
   useMotionValueEvent,
-} from "motion/react";
+} from "framer-motion";
 import { Target, Code, Palette, Headphones } from "lucide-react";
 import Image from "next/image";
 

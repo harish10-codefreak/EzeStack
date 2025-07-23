@@ -3,7 +3,7 @@ import { cn } from "@/lib/utils";
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 import React from "react";
-import { motion } from "motion/react";
+import { motion } from "framer-motion";
 
 export function ModernHeroWithGradients() {
   return (

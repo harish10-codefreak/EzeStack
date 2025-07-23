@@ -4,7 +4,7 @@ import { Mail, Phone, Clock, MapPin } from "lucide-react";
 import { useId } from "react";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
-import { motion } from "motion/react";
+import { motion } from "framer-motion";
 
 export function ContactFormGridWithDetails() {
   const [formData, setFormData] = useState({
